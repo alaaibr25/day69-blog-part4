@@ -12,7 +12,6 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
 from markupsafe import escape
-import os
 
 
 Base = declarative_base()
@@ -20,7 +19,7 @@ Base = declarative_base()
 db = SQLAlchemy()
 app = Flask(__name__)
 
-# app.config['SECRET_KEY'] = 'key'
+# app.config['SECRET_KEY'] = '53d6ab7e5c7c0796ea4cf0bcf567352a43de762a98412b39ae90890272cac020'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
@@ -33,7 +32,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-app.secret_key = os.environ["KEY"]
+app.secret_key = '61dfb8111bd3abe50870a1369b9651ee993886dad92368f76aeb1e2aa396715f'
 
 lm = LoginManager()
 
